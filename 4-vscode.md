@@ -6,8 +6,7 @@ Configuring VScode for Kubernetes is straightforward, just install the extension
 
 However, you may find that when you install the Docker extension in VScode that it is unable to conect to the local docker daemon, as below:
 
-![error](./img/vs2.jpg)
-img[alt=error] { width: 200px; }
+<img src="./img/vs2.jpg" style="width:300px;"/>
 
 The solution to this problem is to inform VScode where minikube keeps its certs so that VScode can connect. Open the settings.json file in VScode by using Command-Shift-P and searching for `settings.json`. Open this file and append the following two lines substituting your ip and username:
 
