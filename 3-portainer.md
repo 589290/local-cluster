@@ -1,6 +1,6 @@
 # Portainer
 
-[Portainer](https://www.portainer.io/) is a wonderful webUI front-end for managing docker and / or Kubernetes. You can also get a free 5-node cluster enterprise license on their website just by registering. If you prefer not to register, you can also use the community edition (substitute -ce for -ee in the docker command).
+[Portainer](https://www.portainer.io/) is a wonderful webUI front-end for managing docker and / or Kubernetes. You can also get a free 5-node cluster enterprise license on their website just by registering. If you prefer not to register, you can optionally use the community edition (substitute -ce for -ee in the docker command).
 
 ## Installing portainer for the docker daemon  
 
