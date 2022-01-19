@@ -189,4 +189,9 @@ minikube delete
 
 # Caveats of the `minikube stop` command
   
-If you use the `minikube stop` command instead of pause / unpause -- the deployed containers will be stopped and replaced by new containers when you run a subsequent `minukube start` command.
+If you use the `minikube stop` command instead of pause / unpause -- the deployed containers will be stopped and replaced by new containers when you run a subsequent `minukube start` command.  
+  
+
+# Known Issue
+
+`minikube` uses a bridged network connection that is blocked from access when Cisco VPN or F5 VPN is in use. At the moment, the only solution to this issue is to disable the VPN connection to return access to your local cluster.
