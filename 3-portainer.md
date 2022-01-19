@@ -32,7 +32,7 @@ You will then arrive to the Portainer home screen:
 
 From here you can work with containers, images, volumes, networks, etc... and manage your local docker environment.
 
-## Deploying portainer on your local kubernetes cluser
+## Deploying portainer on your local kubernetes cluster
 
 In order to manage the kubernetes side of your local cluster we'll have to setup portainer there as well. We'll use a NodePort service per the documentation here [https://docs.portainer.io/v/ce-2.11/start/install/agent/kubernetes/baremetal](https://docs.portainer.io/v/ce-2.11/start/install/agent/kubernetes/baremetal)
 
