@@ -2,7 +2,7 @@
 
 _Prerequisites: `brew` package manager installed._  
   
-  # Install a minikube driver
+  # Install a `minikube` driver
 
 A hypervisor driver is required to use `minikube`, so why not use the most lightweight and fastest one available on your Mac? _Bonus: [hyperkit](https://github.com/moby/hyperkit) is the open source version of the proprietary hypervisor driver used in Docker Desktop for Mac._
 
@@ -48,7 +48,7 @@ Kubernetes just isn't kubernetes without _cube cuddle_:
 brew install kubectl
 ```
 
-# Install minikube (and docker-daemon)
+# Install `minikube` (and docker-daemon)
 
 Install the app before we create a kubernetes cluster and launch the docker-daemon:
 
@@ -56,7 +56,7 @@ Install the app before we create a kubernetes cluster and launch the docker-daem
 brew install minikube
 ```
 
-Set the number of cpu's, memory, and disk size for minikube to utilize in its hyperkit VM:
+Set the number of cpu's, memory, and disk size for `minikube` to utilize in its hyperkit VM:
 
 ```
 minikube config set cpus 8
@@ -86,7 +86,7 @@ Add this to the `minikube` start command if you need to access the docker volume
 --mount --mount-string="/private/var/services/:/private/var/services/"
 ```
 
-## (optional) starting minikube without a k8s cluster
+## (optional) starting `minikube` without a k8s cluster
 
 If you only want docker-daemon and no kubernetes cluster, you can add this flag that was added as of `minukube` 1.24 that allows `minikube` to run the docker daemon without starting a cluster. This may be useful if say, for example, you want to run `k3d` instead for your k8s cluster or if you just want to do local docker development:
 
@@ -194,4 +194,4 @@ If you use the `minikube stop` command instead of pause / unpause -- the deploye
 
 # Known Issue
 
-`minikube` uses a bridged network connection that is blocked from access when Cisco VPN or F5 VPN is in use. At the moment, the only solution to this issue is to disable the VPN connection to return access to your local cluster.
+`minikube` uses a bridged network connection that is blocked from access when Cisco VPN or F5 VPN is in use. At the moment, the only solution to this issue is to disable the VPN connection to return access to your local cluster and/or the local docker daemon.

@@ -1,6 +1,8 @@
-# Setting up a local k8s cluster with `minikube` on a Mac
+# Docker and Kubernetes via `minikube` on a Mac
 
-This guide is designed to walk through the process of replacing Docker Desktop with a `minikube` cluster and local docker daemon/cli.
+This guide is designed to walk through the process of replacing Docker Desktop with `minikube`. 
+
+Once installed, `minikube` provides a local Docker daemon/CLI for local Docker development and optionally a local Kubernetes cluster for local k8s development.
 
 1) [Removing Docker Desktop](1-removing-docker-desktop.md)
 2) [Installing `minikube`](2-minikube.md)
