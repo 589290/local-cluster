@@ -159,6 +159,13 @@ $ minikube ip
 192.168.64.5
 ```
 
+## Metrics Server
+
+The metrics server addon for `minikube` provides a great deal of information about your cluster to Portainer and other cluster clients.
+```
+minikube addons enable metrics-server
+```
+
 ## Accessing the minikube VM
 
 If you find you need to dive deeper, you can `ssh` into the hyperkit / `minikube` VM:
