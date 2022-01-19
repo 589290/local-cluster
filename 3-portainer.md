@@ -41,12 +41,12 @@ curl -L https://downloads.portainer.io/portainer-agent-ee210-k8s-nodeport.yaml -
 kubectl apply -f ./portainer-agent-k8s.yaml ;
 ```
 
-Once the Portainer app is deployed, navigate to the Environments section of the Portainer webui and add a new environment using the Portainer Agent / NodePort option. Enter a for the environment and tell it to use the minikube ip on port 30778 for the Environment URL. All the default choices on the next screen can be used.
+Once the Portainer app is deployed, navigate to the Environments section of the Portainer webui and add a new environment using the Portainer Agent / NodePort option. Enter a name for the environment (minikube) and tell it to use the minikube ip on port 30778 for the environment URL. All the default choices on the next screen can be used.
 
 ```
 192.168.64.10:30778
 ```
 
-The above is the proper format for an Environment URL ~ can be tricky to guess this if you haven't figured it out previously. Your new Kubernetes environment is now available to manage under Portainer!
+The above is the proper format for an environment URL ~ this can be tricky to guess this if you haven't figured it out previously. Your new Kubernetes environment is now available to manage under Portainer!
 
 ![](./img/port2.jpg)
