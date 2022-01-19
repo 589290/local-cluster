@@ -24,7 +24,9 @@ minikube ip
 ```
 ...and  then login to the Portainer webui by visting port 9000 on the cluster ip: [http://192.168.64.10:9000](http://192.168.64.10:9000)
 
-Next you will set an admin password and then choose the option to work with the local environment. YOu will then arrive to the Portainer home screen:
+Next you will set an admin password and then choose the option to work with the local environment.  
+
+You will then arrive to the Portainer home screen:
 
 ![](./img/port1.jpg)
 
