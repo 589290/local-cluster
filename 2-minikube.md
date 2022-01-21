@@ -201,4 +201,11 @@ If you use the `minikube stop` command instead of pause / unpause -- the deploye
 
 # Known Issue
 
-`minikube` uses a bridged network connection that is blocked from access when Cisco VPN or F5 VPN is in use. At the moment, the only solution to this issue is to disable the VPN connection to return access to your local cluster and/or the local docker daemon.
+`minikube` prefers to exist on its own bridged subnet when using hyperkit as the driver. The bridged subnet hyperkit creates is not a part of your local LAN subnet. This separate subnet configuration causes the issue of not being able to reach `minikube`’s resources while on the Cisco VPN.  
+
+There are two workarounds for this issue:  
+
+1) Perform local dev work with VPN off and only connect to VPN as necessary. 
+2) Use the ```--driver=virtualbox``` option instead of the hyperkit driver. With VirtualBox, you can configure the VM to exist on your LAN subnet.  
+   
+There are tradeoffs for these two drivers: the hyperkit driver is faster/more performant than VirtualBox, but with VirtualBox, you get the added flexibility of finer grained networking configuration.
