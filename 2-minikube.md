@@ -199,13 +199,25 @@ minikube delete
 If you use the `minikube stop` command instead of pause / unpause -- the deployed containers will be stopped and replaced by new containers when you run a subsequent `minukube start` command.  
   
 
-# Known Issue
+# Known Issues
 
-`minikube` prefers to exist on its own bridged subnet when using hyperkit as the driver. The bridged subnet hyperkit creates is not a part of your local LAN subnet. This separate subnet configuration causes the issue of not being able to reach `minikube`’s resources while on the Cisco VPN.  
+## Cisco VPN
+
+`minikube` prefers to exist on its own bridged subnet. The bridged subnet `minikube` creates is not a part of your local LAN subnet. This separate subnet configuration causes the issue of not being able to reach `minikube`’s resources while on the Cisco VPN.  
 
 There are two workarounds for this issue:  
 
-1) Perform local dev work with VPN off and only connect to VPN as necessary. 
-2) Use the ```--driver=virtualbox``` option instead of the hyperkit driver. With VirtualBox, you can configure the VM to exist on your LAN subnet.  
+1) Perform local dev work with VPN off interacting with your local cluster as normal and only connect to VPN as necessary when interacting with the loca cluster is not necessary.
+2) Use `--driver=virtualbox` as a VM backend instead of hyperkit. Then, port forward the kube management service (port 8443) and any other additional services that need to be exposed to `127.0.0.1` (localhost). 
+
+![](./img/vb-ports.jpg)
+
+While connected to the Cisco VNP, `minikube`'s services are not available on the new subnet it creates. However, with ports exposed, they can be reached via localhost instead. In order to use Lens or other apps that interact with the cluster management service (8443) directly, you may have to update the ip address for the `minikube` cluster in your `~/.kube/config` file.
+
+![](./img/cisco.jpg)
    
-There are tradeoffs for these two drivers: the hyperkit driver is faster/more performant than VirtualBox, but with VirtualBox, you get the added flexibility of finer grained networking configuration.
+The tradeoff: the hyperkit driver is faster/more performant than VirtualBox, but with VirtualBox, you get the added flexibility of finer grained networking configuration.
+
+## iscsi not available in the `minikube` VM
+
+Some deployments, [Longhorn](https://longhorn.io) in particular, rely on the iscsi kernel modules and corresponding iscsi system apps being present in the `minikube` VM. A workaround for this is detailed here: https://github.com/589290/minikube-with-iscsi
