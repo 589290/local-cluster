@@ -208,7 +208,7 @@ If you use the `minikube stop` command instead of pause / unpause -- the deploye
 There are two workarounds for this issue:  
 
 1) Perform local dev work with VPN off interacting with your local cluster as normal and only connect to VPN as necessary when interacting with the loca cluster is not necessary.
-2) Use `--driver=virtualbox` as a VM backend instead of hyperkit. Then, port forward the kube management service (port 8443) and any other additional services that need to be exposed to `127.0.0.1` (localhost). 
+2) Use `--driver=virtualbox` as a VM backend instead of hyperkit. Then, port forward the kube management service (port 8443) and any other additional services that need to be exposed to `127.0.0.1` (localhost). *IMPORTANT: The VPN MUST BE OFF during the initial `minikube start` command or the cluster will not start up correctly.* The VPN can be turned on after minikube has successfully started up.
 
 ![](./img/vb-ports.jpg)
 
